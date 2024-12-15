@@ -69,7 +69,7 @@ class User(UserMixin,db.Model):
     __tablename__ = "users_table"
     id:Mapped[int] = mapped_column(Integer,primary_key=True)
     email:Mapped[str] = mapped_column(String(50),unique = True)
-    password: Mapped[str] = mapped_column(String(50))
+    password: Mapped[str] = mapped_column(String(500))
     name: Mapped[str] = mapped_column(String(50))
     posts: Mapped[list["BlogPost"]] = relationship("BlogPost", back_populates="author")
     # Adding comments:
